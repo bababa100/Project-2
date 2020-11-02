@@ -28,6 +28,23 @@ router.post('/', (req, res) => {
     res.send('sellers/new')
 })
 
+//Show
+router.get('/:id', (req, res) => {
+    Album.findById(req.params.id, (error, foundAlbum) => {
+        res.render('albums/show.ejs', {
+            album: foundAlbum
+        })
+    })
+})
+
+//POST
+
+router.post('/', async (req, res) => {
+    console.log(req.body);
+    let Seller = await Seller.create(req.body);
+    res.redirect(`/sellers/${seller.id}`);
+});
+
 
 app.listen(PORT, () => {
     console.log("Server is Listening!!!")
