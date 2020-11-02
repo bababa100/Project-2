@@ -8,9 +8,9 @@ const Seller = require('../models/seller.js');
 
 //ROUTES
 //Index of Sellers 
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
 
-    let allSellers = Seller.find()
+    let allSellers = await Seller.find()
     res.render('sellers/index.ejs', {
         seller: allSellers
     })
@@ -24,20 +24,15 @@ router.get('/new', (req, res) => {
 
 //CREATE
 router.post('/', async (req, res) => {
+    console.log(req);
     try {
-
         let seller = await Seller.create(req.body);
         //res.redirect(`/sellers/${seller.id}`);
-        console.log(seller);
         res.send(seller);
-
     } catch (err) {
-
         res.send(err)
     }
-
 });
-
 //Show
 router.get('/:id', (req, res) => {
 
@@ -45,7 +40,6 @@ router.get('/:id', (req, res) => {
 })
 
 //EDIT
-
 router.get('/:id/edit', (req, res) => {
     res.send("The edit page works");
 })
@@ -57,10 +51,11 @@ router.put('/:id', (req, res) => {
 
 //DESTROY/DELETE
 
-router.delete('/:id', (req, res) => {
-    res.send("The destroy routes work");
+router.delete('/:id', async (req, res) => {
+    await Seller.findByIdAndDelete(req.params.id);
+    res.redirect('/sellers');
 
-})
+});
 
 
 
