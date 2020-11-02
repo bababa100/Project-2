@@ -11,6 +11,15 @@
     <h1> Index of Sellers </h1>
 
 
+    <ul>
+        <% seller.forEach(seller => {%>
+        <li>
+            <a href="/sellers/<%= seller.id%>"> <%=seller.name%> </a>
+        </li>
+        <% }) %>
+    </ul>
+
+
 
 
 </body>
