@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const sellerSchema = new mongoose.Schema({
     name: {
         type: String,
-        default: ''
+        default: '',
+        required: true
     },
     albums: {
         type: mongoose.Schema.Types.ObjectId,

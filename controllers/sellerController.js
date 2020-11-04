@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
 
 //New Sellers Route
 router.get('/new', (req, res) => {
-    //res.render('sellers/new.ejs')
+    //res.render('sellers/new.ejs', {seller: new Seller()})
     res.send("This is new page")
 })
 
@@ -45,8 +45,10 @@ router.get('/:id/edit', (req, res) => {
 })
 
 //UPDATE/POST
-router.put('/:id', (req, res) => {
-    res.send("This is for update");
+router.put('/:id', async (req, res) => {
+    await Seller.findByIdAndUpdate(req.params.id, req.body)
+    //res.redirect(`/sellers/${req.params.id}`)
+    res.send("I am ready to update seller")
 })
 
 //DESTROY/DELETE
