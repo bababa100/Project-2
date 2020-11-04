@@ -6,6 +6,7 @@ const router = express.Router();
 const Seller = require('../models/seller.js');
 
 
+
 //ROUTES
 //Index of Sellers 
 router.get('/', async (req, res) => {
@@ -24,14 +25,15 @@ router.get('/new', (req, res) => {
 
 //CREATE
 router.post('/', async (req, res) => {
-    console.log(req);
-    try {
-        let seller = await Seller.create(req.body);
-        //res.redirect(`/sellers/${seller.id}`);
-        res.send(seller);
-    } catch (err) {
-        res.send(err)
-    }
+    // console.log(req);
+    // try {
+    //     let seller = await Seller.create(req.body);
+    //res.redirect(`/sellers/${seller.id}`);
+    //res.send(seller);
+    res.send("create route ran")
+    // } catch (err) {
+    //     res.send(err)
+    // }
 });
 //Show
 router.get('/:id', (req, res) => {
@@ -46,7 +48,7 @@ router.get('/:id/edit', (req, res) => {
 
 //UPDATE/POST
 router.put('/:id', async (req, res) => {
-    await Seller.findByIdAndUpdate(req.params.id, req.body)
+    //await Seller.findByIdAndUpdate(req.params.id, req.body)
     //res.redirect(`/sellers/${req.params.id}`)
     res.send("I am ready to update seller")
 })
@@ -54,8 +56,9 @@ router.put('/:id', async (req, res) => {
 //DESTROY/DELETE
 
 router.delete('/:id', async (req, res) => {
-    await Seller.findByIdAndDelete(req.params.id);
-    res.redirect('/sellers');
+    //await Seller.findByIdAndDelete(req.params.id);
+    //res.redirect('/sellers');
+    res.send("I am ready to delete")
 
 });
 
