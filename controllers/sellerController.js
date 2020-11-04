@@ -17,13 +17,13 @@ router.get('/', async (req, res) => {
 //New Sellers Route
 router.get('/new', async (req, res) => {
 
-    //res.render('sellers/new.ejs', {seller: new Seller()})
-    res.send("This is new page")
+    res.render('sellers/new.ejs')
+
 })
 
 //CREATE
 router.post('/', async (req, res) => {
-    // console.log(req);
+    console.log(req.body);
     try {
         let seller = await Seller.create(req.body);
         res.redirect(`/sellers/${seller.id}`);
@@ -37,7 +37,11 @@ router.post('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
 
     let foundSeller = await Seller.findById(req.params.id).populate('albums');
-    res.send(foundSeller)
+    res.render("sellers/show.ejs", {
+        seller: foundSeller
+    })
+
+
 });
 
 

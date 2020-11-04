@@ -3,6 +3,16 @@ const Album = require('../models/album.js');
 const Seller = require('../models/seller.js');
 const router = express.Router();
 
+
+//DISPLAY NEW ALBUM FORM
+router.get('/new', (req, res) => {
+    console.log("req.query.sellerId,", req.query);
+    res.render("albums/new.ejs", {
+        sellerId: req.query.sellerId
+    })
+
+});
+
 // SHOW ALL ALBUMS ROUTE
 router.get('/:id', async (req, res) => {
 
@@ -10,11 +20,7 @@ router.get('/:id', async (req, res) => {
     res.send(foundAlbum)
 });
 
-//DISPLAY NEW ALBUM FORM
-router.get('/new', (req, res) => {
 
-    res.send("Create Album Form Route Ran")
-});
 
 //CREATE A NEW ALBUM ROUTE
 router.post('/:id', async (req, res) => {
