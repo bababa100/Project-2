@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
 const sellerController = require('./controllers/sellerController');
+const albumController = require('./controllers/albumController');
 require('./db/db.js')
 
 
@@ -14,6 +15,7 @@ app.use(express.urlencoded({
 app.use(express.static('public'))
 app.use(methodOverride('_method'));
 app.use('/sellers', sellerController);
+app.use('/albums', albumController);
 app.use(express.urlencoded({
     extended: false
 }));

@@ -1,7 +1,7 @@
 const {
     Router
 } = require('express');
-const express = require('express')
+const express = require('express');
 const router = express.Router();
 const Seller = require('../models/seller.js');
 
