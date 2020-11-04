@@ -4,12 +4,14 @@ const albumSchema = new mongoose.Schema({
     artist: {
         type: String,
         default: "",
+        required: true
 
     },
 
     title: {
         type: String,
         default: "",
+
     },
 
 }, {

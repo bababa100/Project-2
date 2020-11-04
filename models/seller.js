@@ -6,10 +6,11 @@ const sellerSchema = new mongoose.Schema({
         default: '',
         required: true
     },
-    albums: {
+    albums: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Album'
-    },
+        ref: 'Album',
+
+    }],
 
 });
 
