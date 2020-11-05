@@ -3,5 +3,5 @@
 <a href="/albums/new?sellerId=<%= seller.id %> "> Add New Album</a>
 
 <% seller.albums.forEach(album => { %>
-<a href="/albums/<%=album.id %>"> <%=album.artist %> </a>
+<a href="/albums/<%= album.id %>"> <%=album.artist %> </a>
 <% })%>
