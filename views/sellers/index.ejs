@@ -16,7 +16,14 @@
         <li>
             <a href="/sellers/<%= seller.id%>"> <%=seller.name%> </a>
         </li>
+
+        <form action="/sellers/<%=sellers._id %>?_method=DELETE" method="POST">
+            <button>Delete</button>
+        </form>
+
         <% }) %>
+
+
     </ul>
 
 

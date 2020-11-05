@@ -46,12 +46,14 @@ router.post('/', async (req, res) => {
     // } catch (err) {
     //     res.send(err)
     // }
+    console.log(req.body);
     try {
-        let newAlbum = await Album.create(req.body);
-        //res.redirect(`/album/${album.id}`);
-        res.send(newAlbum);
-    } catch (error) {
-        res.send(error);
+        let album = await Album.create(req.body);
+        res.redirect(`/albums/${album.id}`);
+        //res.send(album);
+
+    } catch (err) {
+        res.send(err)
     }
 });
 
@@ -59,9 +61,9 @@ router.post('/', async (req, res) => {
 
 router.delete('/:id', async (req, res) => {
     await Album.findByIdAndDelete(req.params.id);
-    //res.redirect('/album');
+    res.redirect('/album');
     res.send("I am ready to delete")
 
-});
+})
 
 module.exports = router;

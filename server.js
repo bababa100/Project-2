@@ -12,7 +12,7 @@ const methodOverride = require('method-override');
 app.use(express.urlencoded({
     extended: false
 }));
-app.use(express.static('public'))
+app.use(express.static('/public'))
 //app.use('/css', express.static('public/css'))
 app.use(methodOverride('_method'));
 app.use('/sellers', sellerController);
