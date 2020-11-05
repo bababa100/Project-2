@@ -1,33 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include ('../partials/header.ejs') %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vintage Records</title>
-</head>
-
-<body>
-    <h1> Index of Albums </h1>
+<h1> Index of Albums </h1>
 
 
-    <ul>
-        <% albums.forEach(album => {%>
-        <li>
-            <a href="/albums/<%= album.id%>"> <%=album.name%> </a>
-        </li>
+<ul>
+    <% albums.forEach(album => {%>
+    <li>
+        <a href="/albums/<%= album.id%>"> <%=album.title%> </a>
+    </li>
 
 
-        <form action="/albums/<%=albums._id %>?_method=DELETE" method="POST">
-            <button>Delete</button>
-        </form>
-
-        <% }) %>
-    </ul>
-
-
-
-
-</body>
-
-</html>
+    <form action="/albums/<%=album._id %>?_method=DELETE" method="POST">
+        <button>Delete</button>
+        <!-- <input type="submit" value="DELETE" /> -->
+    </form> <% }) %>
+</ul>
+<%- include ('../partials/footer.ejs') %>

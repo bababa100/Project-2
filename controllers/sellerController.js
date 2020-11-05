@@ -62,8 +62,8 @@ router.put('/:id', async (req, res) => {
 
 router.delete('/:id', async (req, res) => {
     await Seller.findByIdAndDelete(req.params.id);
-    //res.redirect('/sellers');
-    res.send("I am ready to delete")
+    res.redirect('/sellers');
+    //res.send("I am ready to delete")
 
 });
 

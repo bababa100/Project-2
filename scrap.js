@@ -32,4 +32,33 @@ ul >
         <
         li > < %= ing.name % > < %
     }) % > < /li> < /
-    ul >
+ul >
+
+
+    Latest - model from seller show page
+
+    <
+    h1 > < %= food.name % > Detail Page < /h1> <
+h4 > Add Ingredients < /h4> <
+form action = "/foods/<%= food.id %>/ingredients?_method=PUT"
+method = "POST" >
+    <
+    %
+    ingredients.forEach(ingredient => {
+        %
+        >
+        <
+        input type = "checkbox"
+        name = "ingredients"
+        value = "<%= ingredient.id %>" / >
+            <
+            label
+        for = "<%= ingredient.name %>" > < %= ingredient.name % > < /label><br / >
+            <
+            %
+    }) % >
+    <
+    input type = "submit"
+value = "Add Ingredients" / >
+    <
+    /form>

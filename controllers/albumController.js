@@ -6,7 +6,7 @@ const router = express.Router();
 //Index of Albums 
 router.get('/', async (req, res) => {
 
-    let allAlbums = await Seller.find()
+    let allAlbums = await Album.find()
     res.render('albums/index.ejs', {
         albums: allAlbums
     })
@@ -25,8 +25,12 @@ router.get('/new', (req, res) => {
 router.get('/:id', async (req, res) => {
 
     let foundAlbum = await Album.findById(req.params.id);
-    res.send(foundAlbum)
-    console.log("Show route hit");
+    res.render("albums/show.ejs", {
+        album: foundAlbum
+    });
+    //res.send(foundAlbum);
+
+    console.log("Album Show Route hit");
 });
 
 
@@ -56,13 +60,18 @@ router.post('/', async (req, res) => {
         res.send(err)
     }
 });
-
+//UPDATE
+router.put('/:id', async (req, res) => {
+    await Album.findByIdAndUpdate(req.params.id, req.body)
+    //res.redirect(`/albums/${req.params.id}`)
+    res.send("I am ready to update album")
+})
 //DESTROY/DELETE
 
 router.delete('/:id', async (req, res) => {
     await Album.findByIdAndDelete(req.params.id);
-    res.redirect('/album');
-    res.send("I am ready to delete")
+    res.redirect('/albums');
+    //res.send("I am ready to delete")
 
 })
 

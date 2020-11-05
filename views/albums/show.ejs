@@ -1,27 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <h1> Index of Albums </h1>
-
-
-    <ul>
-        <% albums.forEach(album => {%>
-        <li>
-            <a href="/albums/<%= album.id%>"> <%=album.name%> </a>
-        </li>
-        <% }) %>
-    </ul>
+<%- include ('../partials/header.ejs') %>
+<h1><%= album.artist %> Album's Detail Page</h1>
 
 
 
 
-</body>
+<p>
+    <%= album.title %> </p>
+<p> <%= album.artist %></p>
 
-</html>
+<%- include ('../partials/footer.ejs') %>
