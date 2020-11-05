@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+
+body {
+    font-family: 'Muli', sans-serif;
+    color: rgba(0, 0, 0, 0.8);
+    font-weight: 400;
+    line-height: 1.58;
+    background: url(https://cdn.wallpapersafari.com/7/81/CIg9Nk.jpg);
+    letter-spacing: -.003em;
+    font-size: 20px;
+    padding: 70px;
+
+
+    h1 {
+        font-family: 'Quicksand', sans-serif;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 38px;
+        line-height: 1.15;
+        letter-spacing: -.02em;
+        color: rgba(0, 0, 0, 0.8);
+        -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+        text-decoration: none;
+        color: #000000;
+
+        */ a:hover {
+            color: ghostwhite;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        li a {
+            color: mediumseagreen;
+        }
+
+        form {
+            margin-left: 10px;
+        }
+
+        input[type="text"] {
+            padding: 0.3em;
+            margin: 5px;
+        }
+
+        input[type="submit"] {
+            padding: 0.3em;
+            color: rgb(255, 119, 0);
+            background: rgb(127, 247, 181);
+            font-size: 1em;
+            border-radius: 10%;
+        }
