@@ -3,14 +3,15 @@
 Project Overview - 
 
 A full CRUD application with a one-to-many model. One seller to many albums
+
 Project Description - 
 
 This is an app to allow owners of Vintage albums to post there inventory so that customers can see a list of albums for sale.  A seller can upload multiple records.  A user can visit the app to see a list of sellers and a list of albums.  
 
-The app has a list of links, at the top of the screen, to allow easy navigation to different views.  
+Has links at the top of the screen, to allow easy navigation to different views.  
 
 =====
-Problem: There are record collectors with unwanted records and need a way to connect with buyers. 
+Problem: There are record collectors with unwanted records and need a way to connect with buyers. 
 
 General App Idea/Purpose: An app that link record sellers and buyers.
 
@@ -63,9 +64,7 @@ Unsolved Problems:
 Becuase of time limits, I had to keep adjusting the user stories and to what was more feasable.  My earlier ambitions for the project are documented in the "Future Goals" section
 
 Stretch Goals
-Was able to use EJS partials to call for data (<% %>)for some of the files rendering views.  
-
-Components -
+Was able to use EJS partials to call for data (<% %>)for some of the files rendering information for the views such as.  
 
 
 Time Frames -
@@ -75,4 +74,4 @@ Total	                Estimated Time:	  35hrs	Actual Time:	64hrs
 
 
 
-Issues and Resolutions
+
