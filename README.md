@@ -35,7 +35,7 @@ Uses MVC file structure:
 Models:  Associated One to many
  album (artist, title)
  seller (name, albums) 
-Views: Different views to create,show, delete, update a database of sellers and albums.
+Views: Different views to create, show, delete, update a database of sellers and albums.
 Controllers: Controllers for both album and seller to setup routing.
 
 User Stories:
@@ -68,9 +68,9 @@ Was able to use EJS partials to call for data (<% %>)for some of the files rende
 
 
 Time Frames -
-Testing Routes	      Estimated Time:	  3hrs	Actual Time:	5.5hrs
+Testing Routes	      Estimated Time:	  3hrs	Actual Time:	6.5hrs
 Working with API	    Estimated Time:	  32hrs	Actual Time:	58.5hrs
-Total	                Estimated Time:	  35hrs	Actual Time:	64hrs
+Total	                Estimated Time:	  35hrs	Actual Time:	65hrs
 
 
 
